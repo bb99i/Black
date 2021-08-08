@@ -26,29 +26,29 @@ file:write(serialized)
 file:close()  
 end  
 if not database:get(id_server..":token") then
-io.write('\27[0;31m\n ارسل لي توكن البوت الان ↓ :\na◉━━━━━━𝘽𝙆━━━━━━◉ ٴ\n\27')
+io.write('\27[0;31m\n ارسل لي توكن البوت الان ↓ :\na◉━━━━━━𝘽𝙆━━━━━━◉ \n\27')
 local token = io.read()
 if token ~= '' then
 local url , res = https.request('https://api.telegram.org/bot'..token..'/getMe')
 if res ~= 200 then
-print('\27[0;31m◉━━━━━━𝘽𝙆━━━━━━◉ ٴ\n التوكن غير صحيح تاكد منه ثم ارسله')
+print('\27[0;31m◉━━━━━━𝘽𝙆━━━━━━◉ \n التوكن غير صحيح تاكد منه ثم ارسله')
 else
-io.write('\27[0;31m تم حفظ التوكن بنجاح \na◉━━━━━━𝘽𝙆━━━━━━◉ ٴ\n27[0;39;49m')
+io.write('\27[0;31m تم حفظ التوكن بنجاح \na◉━━━━━━𝘽𝙆━━━━━━◉ \n27[0;39;49m')
 database:set(id_server..":token",token)
 end 
 else
-print('\27[0;35m◉━━━━━━𝘽𝙆━━━━━━◉ ٴ \n لم يتم حفظ التوكن ارسل لي التوكن الان')
+print('\27[0;35m◉━━━━━━𝘽𝙆━━━━━━◉  \n لم يتم حفظ التوكن ارسل لي التوكن الان')
 end 
 os.execute('lua Black.lua')
 end
 if not database:get(id_server..":SUDO:ID") then
-io.write('\27[0;35m\n ارسل لي ايدي المطور الاساسي ↓ :\na◉━━━━━━𝘽𝙆━━━━━━◉ ٴ\n\27[0;33;49m')
+io.write('\27[0;35m\n ارسل لي ايدي المطور الاساسي ↓ :\na◉━━━━━━𝘽𝙆━━━━━━◉ \n\27[0;33;49m')
 local SUDOID = io.read()
 if SUDOID ~= '' then
-io.write('\27[1;35m تم حفظ ايدي المطور الاساسي \na◉━━━━━━𝘽𝙆━━━━━━◉ ٴ\n27[0;39;49m')
+io.write('\27[1;35m تم حفظ ايدي المطور الاساسي \na◉━━━━━━𝘽𝙆━━━━━━◉ \n27[0;39;49m')
 database:set(id_server..":SUDO:ID",SUDOID)
 else
-print('\27[0;31m◉━━━━━━𝘽𝙆━━━━━━◉ ٴ \n لم يتم حفظ ايدي المطور الاساسي ارسله مره اخره')
+print('\27[0;31m◉━━━━━━𝘽𝙆━━━━━━◉  \n لم يتم حفظ ايدي المطور الاساسي ارسله مره اخره')
 end 
 os.execute('lua Black.lua')
 end
@@ -86,11 +86,11 @@ rm -fr ../.telegram-cli
 if [ ! -f ./tg ]; then
 echo "◉━━━━━━𝘽𝙆━━━━━━◉ ◉━━━━━━𝘽𝙆━━━━━━◉"
 echo "TG IS NOT FIND IN FILES BOT"
-echo "◉━━━━━━𝘽𝙆━━━━━━◉ ٴ ◉━━━━━━𝘽𝙆━━━━━━◉ ٴ "
+echo "◉━━━━━━𝘽𝙆━━━━━━◉  ◉━━━━━━𝘽𝙆━━━━━━◉  "
 exit 1
 fi
 if [ ! $token ]; then
-echo "◉━━━━━━𝘽𝙆━━━━━━◉ ٴ ◉━━━━━━𝘽𝙆━━━━━━◉ ٴ "
+echo "◉━━━━━━𝘽𝙆━━━━━━◉  ◉━━━━━━𝘽𝙆━━━━━━◉  "
 echo -e "\e[1;36mTOKEN IS NOT FIND IN FILE INFO.LUA \e[0m"
 echo "◉━━━━━━𝘽𝙆━━━━━━◉"
 exit 1
@@ -576,7 +576,7 @@ promote = '✔️'
 else
 promote = '✖'
 end
-Send(chat,msg.id_,'\n- الرتبة : مشرف  '..'\n- والصلاحيات هي ↓ \nٴ━━━━━━━━━━'..'\n- تغير معلومات الكروب ↞ ❴ '..info..' ❵'..'\n- حذف الرسائل ↞ ❴ '..delete..' ❵'..'\n- حظر المستخدمين ↞ ❴ '..restrict..' ❵'..'\n- دعوة مستخدمين ↞ ❴ '..invite..' ❵'..'\n- تثبيت الرسائل ↞ ❴ '..pin..' ❵'..'\n- اضافة مشرفين جدد ↞ ❴ '..promote..' ❵')   
+Send(chat,msg.id_,'\n- الرتبة : مشرف  '..'\n- والصلاحيات هي ↓ \n━━━━━━━━━━'..'\n- تغير معلومات الكروب ↞ ❴ '..info..' ❵'..'\n- حذف الرسائل ↞ ❴ '..delete..' ❵'..'\n- حظر المستخدمين ↞ ❴ '..restrict..' ❵'..'\n- دعوة مستخدمين ↞ ❴ '..invite..' ❵'..'\n- تثبيت الرسائل ↞ ❴ '..pin..' ❵'..'\n- اضافة مشرفين جدد ↞ ❴ '..promote..' ❵')   
 end
 end
 end
@@ -2626,7 +2626,7 @@ local Text =[[
 ⅌︙𝑩𝒍𝒂𝑪𝒌➧بـــلاڪ
 ◉━━━━━━𝘽𝙆━━━━━━◉
 ⅌︙[𝑺𝒐𝒖𝒓𝒄𝒆 𝑪𝒉𝒂𝒏𝒏𝒆𝒍](t.me/BB93i)
-⅌︙[𝑺𝒐𝒖𝒓𝒄𝒆 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓](t.me/BB93i)
+⅌︙[𝑺𝒐𝒖𝒓𝒄𝒆 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓](t.me/BB99i)
 ⅌︙[𝑩𝒐𝒕 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓](t.me/BB99i)
 ⅌︙[𝑻𝒘𝒔 𝑩𝒍𝒂𝑪𝒌](t.me/BB99iBot)
 ]]
@@ -5964,7 +5964,7 @@ send(msg.chat_id_, msg.id_, ' ⅌︙تم مسح جميع الصاكين')
 end
 if text == ("تاك للصاكين") and Mod(msg) then
 local list = database:smembers(bot_id..'Modde:User'..msg.chat_id_)
-t = "\n ⅌︙قائمه صاكين الكروب \nٴ◉━━━━━━𝘽𝙆━━━━━━◉ٴ\n"
+t = "\n ⅌︙قائمه صاكين الكروب \n◉━━━━━━𝘽𝙆━━━━━━◉\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -11226,7 +11226,7 @@ if Json_Info.result.can_restrict_members == true then
 restrict = '✔️' else restrict = '✖' end
 if Json_Info.result.can_promote_members == true then
 promote = '✔️' else promote = '✖' end 
-send(msg.chat_id_,msg.id_,'\n ⅌︙اهلا عزيزي البوت هنا ادمن'..'\n ⅌︙وصلاحياته هي ↓ \nٴ━━━━━━━━━━'..'\n ⅌︙تغير معلومات الكروب ↞ ❴ '..info..' ❵'..'\n ⅌︙حذف الرسائل ↞ ❴ '..delete..' ❵'..'\n ⅌︙حظر المستخدمين ↞ ❴ '..restrict..' ❵'..'\n ⅌︙دعوة مستخدمين ↞ ❴ '..invite..' ❵'..'\n ⅌︙تثبيت الرسائل ↞ ❴ '..pin..' ❵'..'\n ⅌︙اضافة مشرفين جدد ↞ ❴ '..promote..' ❵')   
+send(msg.chat_id_,msg.id_,'\n ⅌︙اهلا عزيزي البوت هنا ادمن'..'\n ⅌︙وصلاحياته هي ↓ \n━━━━━━━━━━'..'\n ⅌︙تغير معلومات الكروب ↞ ❴ '..info..' ❵'..'\n ⅌︙حذف الرسائل ↞ ❴ '..delete..' ❵'..'\n ⅌︙حظر المستخدمين ↞ ❴ '..restrict..' ❵'..'\n ⅌︙دعوة مستخدمين ↞ ❴ '..invite..' ❵'..'\n ⅌︙تثبيت الرسائل ↞ ❴ '..pin..' ❵'..'\n ⅌︙اضافة مشرفين جدد ↞ ❴ '..promote..' ❵')   
 end
 end
 end
@@ -11375,7 +11375,7 @@ database:set(bot_id.." sofi:zhrf_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^زخرفه (.*)$") and database:get(bot_id.." sofi:zhrf_Bots"..msg.chat_id_) == "open" then
 local TextZhrfa = text:match("^زخرفه (.*)$")
-zh = https.request('https://rudi-dev.tk/Amir1/BoykA.php?en='..URL.escape(TextZhrfa)..'')
+zh = https.request('https://boyka-api.ml/frills.php?en='..URL.escape(TextZhrfa)..'')
 zx = JSON.decode(zh)
 t = "\n⅌︙قائمه الزخرفه \n◉━━━━━━𝘽𝙆━━━━━━◉\n"
 i = 0
@@ -11383,7 +11383,7 @@ for k,v in pairs(zx.ok) do
 i = i + 1
 t = t..i.."-  "..v.." \n"
 end
-send(msg.chat_id_, msg.id_, t..'◉━━━━━━𝘽𝙆━━━━━━◉ٴ\n⅌︙⅌︙[𝑩𝒍𝒂𝑪𝒌➧بـــلاڪ](t.me/BB93i) ')
+send(msg.chat_id_, msg.id_, t..'◉━━━━━━𝘽𝙆━━━━━━◉\n⅌︙⅌︙[𝑩𝒍𝒂𝑪𝒌➧بـــلاڪ](t.me/BB93i) ')
 end
 if text == "تعطيل الابراج" and Manager(msg) then
 send(msg.chat_id_, msg.id_, '*⅌︙تم تعطيل الابراج*')
@@ -11593,7 +11593,7 @@ local Teext =[[
 ⅌︙الصوت
 ⅌︙الجهات
 ⅌︙الاشعارات
-◉━━━━━━𝘽𝙆━━━━━━◉ٴ
+◉━━━━━━𝘽𝙆━━━━━━◉
 ⅌︙[𝑩𝒍𝒂𝑪𝒌➧بـــلاڪ](t.me/BB93i)
 ]]
 keyboard = {} 
@@ -11646,7 +11646,7 @@ local Teext =[[
 ⅌︙ردود البوت
 ⅌︙الترحيب
 ⅌︙ردود المدير
-⅌︙ٴall
+⅌︙all
 ⅌︙الردود
 ⅌︙نسبة الحب
 ⅌︙نسبة الرجوله
@@ -11663,7 +11663,7 @@ local Teext =[[
 ⅌︙ردود البوت
 ⅌︙اوامر التحشيش
 ⅌︙صورتي 
-◉━━━━━━𝘽𝙆━━━━━━◉ٴ
+◉━━━━━━𝘽𝙆━━━━━━◉
 ⅌︙[𝑩𝒍𝒂𝑪𝒌➧بـــلاڪ](t.me/BB93i)
 ]]
 keyboard = {} 
@@ -11717,7 +11717,7 @@ local Teext =[[
 ⅌︙رد
 ⅌︙امر
 ⅌︙ترتيب الاوامر
-◉━━━━━━𝘽𝙆━━━━━━◉ٴ
+◉━━━━━━𝘽𝙆━━━━━━◉
 ⅌︙[𝑩𝒍𝒂𝑪𝒌➧بـــلاڪ](t.me/BB93i)
 ]]
 keyboard = {} 
@@ -11777,7 +11777,7 @@ local Teext =[[
 ⅌︙حذف  امر + الامر القديم
 ◉━━━━━━𝘽𝙆━━━━━━◉
 ⅌︙الاوامر المضافه ( لعرض الاوامر المضافه ) 
-◉━━━━━━𝘽𝙆━━━━━━◉ٴ
+◉━━━━━━𝘽𝙆━━━━━━◉
 ⅌︙[𝑩𝒍𝒂𝑪𝒌➧بـــلاڪ](t.me/BB93i)
 ]]
 keyboard = {} 
@@ -11842,7 +11842,7 @@ local Teext =[[
 ⅌︙تغير رد العضو + اسم
 ⅌︙تغير امر الاوامر
 ⅌︙تغير امر م1 ~ الئ م10
-◉━━━━━━𝘽𝙆━━━━━━◉ٴ
+◉━━━━━━𝘽𝙆━━━━━━◉
 ⅌︙[𝑩𝒍𝒂𝑪𝒌➧بـــلاڪ](t.me/BB93i)
 ]]
 keyboard = {} 
@@ -11926,7 +11926,7 @@ local Teext =[[
 ⅌︙نسبه الانوثه
 ⅌︙الساعه
 ⅌︙التاريخ
-◉━━━━━━𝘽𝙆━━━━━━◉ٴ
+◉━━━━━━𝘽𝙆━━━━━━◉
 ⅌︙[𝑩𝒍𝒂𝑪𝒌➧بـــلاڪ](t.me/BB93i)
 ]]
 keyboard = {} 
@@ -12053,7 +12053,7 @@ local Teext =[[
 ⅌︙مسح المنشئين ← المنشئين
 ⅌︙اسم ~ ايدي + بوت غادر 
 ⅌︙اذاعه 
-◉━━━━━━𝘽𝙆━━━━━━◉ٴ
+◉━━━━━━𝘽𝙆━━━━━━◉
 ⅌︙[𝑩𝒍𝒂𝑪𝒌➧بـــلاڪ](t.me/BB93i)
 ]]
 keyboard = {} 
@@ -12150,7 +12150,7 @@ local Teext =[[
 ⅌︙تفعيل/تعطيل المغادره
 ⅌︙تنظيف المشتركين
 ⅌︙تنظيف الكروبات
-◉━━━━━━𝘽𝙆━━━━━━◉ٴ
+◉━━━━━━𝘽𝙆━━━━━━◉
 ⅌︙[𝑩𝒍𝒂𝑪𝒌➧بـــلاڪ](t.me/BB93i)
 ]]
 keyboard = {} 
@@ -12206,7 +12206,7 @@ local Teext =[[
 ⅌︙شنو رئيك بهذا بالرد
 ⅌︙شنو رئيك بهاي بالرد
 ⅌︙تحب هذا
-◉━━━━━━𝘽𝙆━━━━━━◉ٴ
+◉━━━━━━𝘽𝙆━━━━━━◉
 ⅌︙[𝑩𝒍𝒂𝑪𝒌➧بـــلاڪ](t.me/BB93i)
 ]]
 keyboard = {} 
